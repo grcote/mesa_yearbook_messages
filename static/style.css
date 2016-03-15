@@ -1,0 +1,13 @@
+a, h1, h2, h4   { color: #377ba8; }
+h1, h2, h4    { font-family: 'Verdana', serif; margin: 0; }
+p { font-family: 'Verdana', serif; font-size: 0.8em; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+p               { }
+input[type="text"] { margin: 0.5em 0.8em;  }
+textarea         { margin: 0.5em 0.8em;  }
+select           { margin: 0.5em 0.8em;  }
+
+.flash          { background: #cee5F5; padding: 0.5em;
+                  border: 1px solid #aacbe2; }
+.error          { background: #f0d6d6; padding: 0.5em; }

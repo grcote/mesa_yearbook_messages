@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block body %}
+<br>
+
+<table class="pure-table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Student</th>
+        <th>Parent</th>
+        <th>Email</th>
+        <th>Teacher</th>
+        <th>Message</th>
+        <th>Questions</th>
+    </tr>
+    </thead>
+    {% for entry in entries %}
+    <tbody>
+    <tr>
+        <td>{{ entry['id'] }}</td>
+        <td>{{ entry['student'] }}</td>
+        <td>{{ entry['parent'] }}</td>
+        <td>{{ entry['email'] }}</td>
+        <td>{{ entry['teacher'] }}</td>
+        <td>{{ entry['message'] }}</td>
+        <td>{{ entry['comments'] }}</td>
+    </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% endblock %}

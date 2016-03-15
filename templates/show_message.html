@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h4 style="padding-top: 5px;">Your Message:</h4>
+<textarea style="color: gray;" name="old_message" rows="3" cols="60" disabled>{{ message }}</textarea>
+<br><br>
+<a class="pure-button pure-button-primary" href="/edit_message/{{ email }}/edit">Edit Message</a>
+<a class="pure-button pure-button-primary" href="/delete/{{email}}">Start Over</a>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<p>Enter the parent's email used in creating your note.</p>
+<form action="{{ url_for('find_message') }}" method=post>
+    <div style="padding-bottom: 5px;">
+        <input type=text size=30 name=email>
+    </div>
+    <button type="submit" class="pure-button pure-button-primary">Submit</button>
+</form>
+
+{% endblock %}

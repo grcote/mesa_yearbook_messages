@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+<form action="{{ url_for('create_message') }}" method=post>
+    <br>
+    <h4>Parent Name:</h4>
+    <div class="input"><input type="text" size="30" name="parent"></div>
+    <h4>Parent Email:</h4>
+    <input type="text" size="30" name="email">
+    <h4>Student:</h4>
+    <input type="text" size="30" name="student">
+    <h4>Student's Teacher:</h4>
+    <select name="teacher">
+        <option value="Evans">Evans</option>
+        <option value="Kellogg">Kellog</option>
+        <option value="Krumpeck">Krumpeck</option>
+        <option value="Other">Other</option>
+    </select>
+    <h4>Message:</h4>
+    <p><i>120 character limit which includes spaces</i></p>
+    <textarea name="message" rows="3" cols="60" maxlength="120"></textarea>
+    <h4>Questions/Comments:</h4>
+    <textarea name="comments" rows="3" cols="60"></textarea><br>
+    <button type="submit" class="pure-button pure-button-primary">Submit</button>
+</form>
+{% endblock %}
