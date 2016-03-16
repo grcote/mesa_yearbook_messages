@@ -1,4 +1,4 @@
-import sendgrid, time
+import sendgrid, time, os
 from flask import Flask, request, g, redirect, url_for, render_template, flash
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.heroku import Heroku
@@ -25,7 +25,8 @@ class Message(db.Model):
 def send_email(email):
     msg = Message.query.filter_by(email=email).first()
 
-    client = sendgrid.SendGridClient("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")
+    api_key = os.environ['SENDGRID_API']
+    client = sendgrid.SendGridClient(api_key)
     message = sendgrid.Mail()
 
     message.add_to("grcote@gmail.com")
