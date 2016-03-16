@@ -3,7 +3,7 @@
 
 <form action="{{ url_for('update_message') }}" method=post>
     <input type="hidden" name="email" value="{{ email }}">
-    <h4>Your Existing Message:</h4>
+    <h4 style="margin-top: 15px;">Your Existing Message:</h4>
     <textarea style="background-color: #C0CBC2;" name="old_message" rows="3" cols="60" disabled>{{ message }}</textarea>
 
     <h4>Make Edits Here:</h4>
