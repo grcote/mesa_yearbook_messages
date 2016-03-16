@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 {% block body %}
 
-<h4 style="padding-top: 5px;">Your Message:</h4>
-<textarea style="background-color: #C0CBC2;" name="old_message" rows="3" cols="60" disabled>{{ message }}</textarea>
+<h4 style="padding-top: 5px;">Following Message Was Successfully Added:</h4>
+<p style="font-size: 1em; color: #225E2E; padding-left: 15px; font-weight: 700;">{{ message }}</p>
 <br><br>
 <a class="pure-button pure-button-primary" href="/edit_message/{{ email }}/edit">Edit Above Message</a>
 <a class="pure-button pure-button-primary" href="/delete/{{email}}">Delete & Start Over</a>
