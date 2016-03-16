@@ -57,7 +57,7 @@ def create_message():
         )
         db.session.add(new_message)
         db.session.commit()
-        flash("You're all done!")
+        flash("You're all done! The Following Message Was Successfully Added:")
         return redirect(url_for('show_message', email=request.form['email'], message=request.form['message']))
     except Exception as e:
         flash("You already have a message created. You're all done or you can edit your message.")
