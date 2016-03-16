@@ -1,1 +1,1 @@
-web: gunicorn app:yb_notes_pg
+web: gunicorn yb_notes_pg:app
