@@ -118,9 +118,9 @@ def delete_message(email):
     return redirect(url_for('new_message'))
 
 
-@app.route('/thank_you')
-def thank_you():
-    return render_template('thank_you.html')
+@app.route('/thank_you/<email>')
+def thank_you(email):
+    return render_template('thank_you.html', email=email)
 
 
 @app.route('/marcey_report')
