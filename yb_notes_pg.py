@@ -22,14 +22,18 @@ class Message(db.Model):
     comments = db.Column(db.String(240))
 
 
-def send_email(email, yb_message):
+def send_email(email):
+    msg = Message.query.filter_by(email=email).first()
+
     client = sendgrid.SendGridClient("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")
     message = sendgrid.Mail()
 
     message.add_to("grcote@gmail.com")
     message.set_from("grcote@gmail.com")
     message.set_subject("Mesa Yearbook Message")
-    message.set_html("{0},{1},{2}".format(email, yb_message, time.time()))
+    message.set_html("{0},{1},{2},{3},{4},{5},{6},{7}".format(
+        msg.id, msg.student, msg.teacher, msg.parent, msg.email, msg.message, msg.comments, time.time()
+    ))
 
     client.send(message)
 
@@ -68,7 +72,7 @@ def create_message():
 
 @app.route('/show', methods=['GET'])
 def show_message():
-    send_email(email=request.args['email'], yb_message=request.args['message'])
+    send_email(email=request.args['email'])
     return render_template('show_message.html', email=request.args['email'], message=request.args['message'])
 
 
