@@ -44,7 +44,7 @@ def create_message():
         )
         db.session.add(new_message)
         db.session.commit()
-        flash("New message was successfully added. You're all done!")
+        flash("You're all done!")
         return redirect(url_for('show_message', email=request.form['email'], message=request.form['message']))
     except Exception as e:
         flash("You already have a message created. You're all done or you can edit your message.")
@@ -89,7 +89,7 @@ def update_message():
 
     message = Message.query.filter_by(email=owner_email).first()
 
-    flash("Entry was successfully edited. You're all done!")
+    flash("You're all done!")
     return redirect(url_for('show_message', email=message.email, message=message.message))
 
 
