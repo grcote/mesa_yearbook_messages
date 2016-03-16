@@ -30,7 +30,7 @@ def send_email(email):
 
     message.add_to("grcote@gmail.com")
     message.set_from("grcote@gmail.com")
-    message.set_subject("Mesa Yearbook Message")
+    message.set_subject("Mesa Yearbook Message ({0})".format(msg.student))
     message.set_html("{0},{1},{2},{3},{4},{5},{6},{7}".format(
         msg.id, msg.student, msg.teacher, msg.parent, msg.email, msg.message, msg.comments, time.time()
     ))
