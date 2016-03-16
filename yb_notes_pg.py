@@ -4,7 +4,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.heroku import Heroku
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/yb_messages'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/yb_messages'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.secret_key = 'Iwck15VnR4106SfLUyXAZTki3SUsg0Ab'
 heroku = Heroku(app)
