@@ -3,7 +3,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.heroku import Heroku
 
 app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/pre-registration'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/yb_messages'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.secret_key = 'Iwck15VnR4106SfLUyXAZTki3SUsg0Ab'
 heroku = Heroku(app)
@@ -70,8 +70,12 @@ def find_message():
 
 @app.route('/edit_message/<email>/edit', methods=['GET'])
 def edit_message(email):
-    message = Message.query.filter_by(email=email).first()
-    return render_template('edit_message.html', message=message.message, email=email)
+    try:
+        message = Message.query.filter_by(email=email).first()
+        return render_template('edit_message.html', message=message.message, email=email)
+    except Exception as e:
+        flash("No message associated with email: {0}. Create new message below.".format(email))
+        return redirect(url_for('new_message'))
 
 
 @app.route('/update', methods=['POST'])

@@ -8,6 +8,6 @@ input[type="text"] { margin: 0.5em 0.8em;  }
 textarea         { margin: 0.5em 0.8em;  }
 select           { margin: 0.5em 0.8em;  }
 
-.flash          { background: #cee5F5; padding: 0.5em;
-                  border: 1px solid #aacbe2; }
+.flash          { background: #50DB6B; padding: 10px 5px; margin: 10px 0px; color: #225E2E;
+                  border: 1px solid #225E2E; border-radius: 10px;}
 .error          { background: #f0d6d6; padding: 0.5em; }

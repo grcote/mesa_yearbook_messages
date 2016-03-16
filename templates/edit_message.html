@@ -1,21 +1,16 @@
 {% extends "layout.html" %}
 {% block body %}
 
-<p>Enter your changes into "Edited Message" box and submit.</p>
-
-
 <form action="{{ url_for('update_message') }}" method=post>
     <input type="hidden" name="email" value="{{ email }}">
+    <h4>Your Message:</h4>
+    <textarea style="background-color: #C0CBC2;" name="old_message" rows="3" cols="60" disabled>{{ message }}</textarea>
 
-    <h4>Current Message:</h4>
-    <textarea style="color: gray;" name="old_message" rows="3" cols="60" disabled>{{ message }}</textarea>
+    <h4>Make Edits Here:</h4>
 
-    <h4>Edited Message:</h4>
+    <p style="margin: 1px 0 1px 20px;">Enter your changes here.</p>
     <textarea name="message" rows="3" cols="60" maxlength="120"></textarea><br>
-    <button type="submit" class="pure-button pure-button-primary">Submit</button>
-    <a class="pure-button pure-button-primary" href="/delete/{{email}}">Start Over</a>
+    <button type="submit" class="pure-button pure-button-primary">Submit Edits</button>
+    <a class="pure-button pure-button-primary" href="/delete/{{email}}">Delete & Start Over</a>
 </form>
-
-
-
 {% endblock %}
