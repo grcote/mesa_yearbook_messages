@@ -1,9 +1,10 @@
+import sendgrid, time
 from flask import Flask, request, g, redirect, url_for, render_template, flash
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.heroku import Heroku
 
 app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/yb_messages'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/yb_messages'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.secret_key = 'Iwck15VnR4106SfLUyXAZTki3SUsg0Ab'
 heroku = Heroku(app)
@@ -19,6 +20,18 @@ class Message(db.Model):
     student = db.Column(db.String(40))
     message = db.Column(db.String(120))
     comments = db.Column(db.String(240))
+
+
+def send_email(email, yb_message):
+    client = sendgrid.SendGridClient("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")
+    message = sendgrid.Mail()
+
+    message.add_to("grcote@gmail.com")
+    message.set_from("grcote@gmail.com")
+    message.set_subject("Mesa Yearbook Message")
+    message.set_html("{0},{1},{2}".format(email, yb_message, time.time()))
+
+    client.send(message)
 
 
 @app.route('/', methods=['GET'])
@@ -55,6 +68,7 @@ def create_message():
 
 @app.route('/show', methods=['GET'])
 def show_message():
+    send_email(email=request.args['email'], yb_message=request.args['message'])
     return render_template('show_message.html', email=request.args['email'], message=request.args['message'])
 
 
@@ -112,3 +126,5 @@ def marcey_report():
 if __name__ == '__main__':
     app.debug = True
     app.run()
+
+
