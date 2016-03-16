@@ -103,7 +103,7 @@ def update_message():
 
     message = Message.query.filter_by(email=owner_email).first()
 
-    flash("You're all done!")
+    flash("You're all done! The Following Message Was Successfully Edited:")
     return redirect(url_for('show_message', email=message.email, message=message.message))
 
 
@@ -116,6 +116,11 @@ def delete_message(email):
     db.session.commit()
 
     return redirect(url_for('new_message'))
+
+
+@app.route('/thank_you')
+def thank_you():
+    return render_template('thank_you.html')
 
 
 @app.route('/marcey_report')
