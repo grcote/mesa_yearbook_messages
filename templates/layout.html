@@ -1,10 +1,10 @@
 <!doctype html>
-<title>Messages</title>
+<title>Mesa Yearbook Messages</title>
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 
 <div style="padding: 20px 20px 20px 20px;">
-    <h1><a href="/" style="text-decoration: none;">Messages</a></h1>
+    <h1><a href="/" style="text-decoration: none;">Mesa Yearbook Messages</a></h1>
 
     {% for message in get_flashed_messages() %}
     <div class=flash>{{ message }}</div>
