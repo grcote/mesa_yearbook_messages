@@ -7,7 +7,10 @@
     <textarea style="background-color: #C0CBC2;" name="old_message" rows="3" cols="60" disabled>{{ message }}</textarea>
 
     <h4>Make Edits Here:</h4>
-    <textarea name="message" rows="1" cols="130" maxlength="120" placeholder="Whatever text you submit from this box will REPLACE the above existing message!" autofocus style="font-size: 0.75em;"></textarea><br>
+    <input type="text" size="130" name="message" maxlength="120"
+           placeholder="Whatever text you submit from this box will REPLACE the above existing message!" autofocus
+           required style="font-size: 0.75em;">
+    <br>
     <button type="submit" class="pure-button pure-button-primary">Submit Edits</button>
     <a class="pure-button pure-button-primary" href="/delete/{{email}}">Delete & Start Over</a>
     <a class="pure-button pure-button-primary" href="/thank_you/{{ email }}">Sign Out</a>
