@@ -2,6 +2,26 @@
 {% block body %}
 <br>
 
+<h3>Messages Received by Teacher</h3>
+<table class="pure-table">
+    <thead>
+    <th></th>
+    <th>Evans</th>
+    <th>Kellogg</th>
+    <th>Krumpec</th>
+    <th>Other</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Count</td>
+        <td>{{ teacher_count.evans}}</td>
+        <td>{{ teacher_count.kellogg}}</td>
+        <td>{{ teacher_count.krumpeck}}</td>
+        <td>{{ teacher_count.other}}</td>
+    </tr>
+    </tbody>
+</table>
+<h3>Full Message Data</h3>
 <table class="pure-table">
     <thead>
     <tr>
