@@ -1,4 +1,5 @@
 import sendgrid, time, os
+from sqlalchemy import asc
 from flask import Flask, request, g, redirect, url_for, render_template, flash
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.heroku import Heroku
@@ -132,7 +133,7 @@ def thank_you(email):
 
 @app.route('/marcey_report')
 def marcey_report():
-    entries = Message.query.all()
+    entries = Message.query.order_by(Message.student.asc()).all()
     return render_template('marcey_report.html', entries=entries)
 
 if __name__ == '__main__':
