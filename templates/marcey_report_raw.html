@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+<br>
+
+<h3>Raw Data - Copy and Paste in Excel</h3>
+<a style="font-size: 0.85em;" href="/marcey_report">Report Page</a><br><br>
+
+    {% for entry in entries %}
+
+        {{ entry.id }} |
+        {{ entry.student }} |
+        {{ entry.parent }} |
+        {{ entry.email }} |
+        {{ entry.teacher }} |
+        {{ entry.message }} |
+        {{ entry.comment }}<br>
+
+{% endfor %}
+</table>
+{% endblock %}

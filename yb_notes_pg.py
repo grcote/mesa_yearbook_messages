@@ -142,6 +142,13 @@ def marcey_report():
 
     return render_template('marcey_report.html', entries=entries, teacher_count=teacher_count)
 
+
+@app.route('/marcey_report_raw')
+def marcey_report_raw():
+    entries = Message.query.order_by(Message.student.asc()).all()
+    return render_template('marcey_report_raw.html', entries=entries)
+
+
 if __name__ == '__main__':
     app.debug = True
     app.run()
