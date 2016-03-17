@@ -136,8 +136,8 @@ def marcey_report():
 
     teacher_count = {}
     teacher_count['evans'] = Message.query.filter(Message.teacher == "Evans").count()
-    teacher_count['kellogg'] = Message.query.filter(Message.teacher == "kellogg").count()
-    teacher_count['krumpeck'] = Message.query.filter(Message.teacher == "krumpeck").count()
+    teacher_count['kellogg'] = Message.query.filter(Message.teacher == "Kellogg").count()
+    teacher_count['krumpeck'] = Message.query.filter(Message.teacher == "Krumpeck").count()
     teacher_count['other'] = Message.query.filter(Message.teacher == "Other").count()
 
     return render_template('marcey_report.html', entries=entries, teacher_count=teacher_count)
