@@ -1,10 +1,9 @@
 {% extends "layout.html" %}
 {% block body %}
     <div style="padding: 10px;">
-    <br><br>
         <h2>Thank You!</h2>
         <h4 style="margin: 15px 20px;">Your message will appear in the yearbook!</h4>
     <br><br><br>
-    <a class="pure-button pure-button-primary" href="/edit_message/{{ email }}/edit">Oops, Need to Edit My Message</a>
+    <a href="/edit_message/{{ email }}/edit">Oops, Need to Edit My Message</a>
     </div>
 {% endblock %}
