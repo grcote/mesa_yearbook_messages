@@ -125,7 +125,9 @@ def delete_message(email):
 
 @app.route('/thank_you/<email>')
 def thank_you(email):
-    return render_template('thank_you.html', email=email)
+    message = Message.query.filter_by(email=email).first()
+    flash("Thank You! We have the following message on file for {0}:".format(message.student))
+    return render_template('thank_you.html', message=message)
 
 
 @app.route('/marcey_report')

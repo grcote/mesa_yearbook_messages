@@ -1,9 +1,8 @@
 {% extends "layout.html" %}
 {% block body %}
     <div style="padding: 10px;">
-        <h2>Thank You!</h2>
-        <h4 style="margin: 15px 20px;">Your message will appear in the yearbook!</h4>
+        <h2 style="margin: 15px 20px;">{{ message.message }}</h2>
     <br><br><br>
-    <a href="/edit_message/{{ email }}/edit">Oops, Need to Edit My Message</a>
+    <a href="/edit_message/{{ message.email }}/edit">Oops, Need to Edit My Message</a>
     </div>
 {% endblock %}
