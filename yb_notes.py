@@ -9,7 +9,7 @@ DATABASE = 'yb_notes.db'
 DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = 'gerard_cote'
-password = '2Boys235'
+password = '2 + kids + code'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
